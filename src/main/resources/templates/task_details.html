@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Details</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Task Details</h1>
+<h2 th:text="${task.title}"></h2>
+<p th:text="${task.description}"></p>
+<a th:href="@{/tasks/{id}/update(id=${task.id})}">Edit</a>
+<form th:action="@{/tasks/{id}/delete(id=${task.id})}" method="post">
+    <button type="submit">Delete</button>
+</form>
+<a href="/tasks">Back to List</a>
+</body>
+</html>
